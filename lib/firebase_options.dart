@@ -44,39 +44,43 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD2PdKMjhLDsQZXwF-Qnp9tuTjfVqwwv9I',
-    appId: '1:637905690799:web:17b30bbb335e097c6fb45a',
-    messagingSenderId: '637905690799',
-    projectId: 'authtutorial-de80c',
-    authDomain: 'authtutorial-de80c.firebaseapp.com',
-    storageBucket: 'authtutorial-de80c.appspot.com',
+    apiKey: 'AIzaSyBsD9BHrqFdncQV8JkJ228kwcnHST5M92U',
+    appId: '1:1051621258915:web:8cb96bdcc2293b1f6bb116',
+    messagingSenderId: '1051621258915',
+    projectId: 'authentication-876a9',
+    authDomain: 'authentication-876a9.firebaseapp.com',
+    databaseURL: 'https://authentication-876a9-default-rtdb.firebaseio.com',
+    storageBucket: 'authentication-876a9.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA8d-FWDmv6E0QbtoRF6ih_ilZc-1Vj08M',
-    appId: '1:637905690799:android:e8bc54bf75db03016fb45a',
-    messagingSenderId: '637905690799',
-    projectId: 'authtutorial-de80c',
-    storageBucket: 'authtutorial-de80c.appspot.com',
+    apiKey: 'AIzaSyAkHDmTxX3bm7MI8xa6HQ-9ILIR1NZZ8FE',
+    appId: '1:1051621258915:android:a053cfb2fd0e2fb76bb116',
+    messagingSenderId: '1051621258915',
+    projectId: 'authentication-876a9',
+    databaseURL: 'https://authentication-876a9-default-rtdb.firebaseio.com',
+    storageBucket: 'authentication-876a9.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyADAlJVsAlvX4yekAxgd84NuU1-ALF0Lm0',
-    appId: '1:637905690799:ios:88f47a6f5de9318a6fb45a',
-    messagingSenderId: '637905690799',
-    projectId: 'authtutorial-de80c',
-    storageBucket: 'authtutorial-de80c.appspot.com',
-    iosClientId: '637905690799-9shnm980f8q6vjk9rbq6eih4tfp1l7jg.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAbRF7mUc931jwb6NGYt4YPB0b5C3nLA6w',
+    appId: '1:1051621258915:ios:02d2363987e081396bb116',
+    messagingSenderId: '1051621258915',
+    projectId: 'authentication-876a9',
+    databaseURL: 'https://authentication-876a9-default-rtdb.firebaseio.com',
+    storageBucket: 'authentication-876a9.appspot.com',
+    iosClientId: '1051621258915-b8ujfnrif57ujauq7mbpb9kcvlff33db.apps.googleusercontent.com',
     iosBundleId: 'com.example.modernlogintute',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyADAlJVsAlvX4yekAxgd84NuU1-ALF0Lm0',
-    appId: '1:637905690799:ios:88f47a6f5de9318a6fb45a',
-    messagingSenderId: '637905690799',
-    projectId: 'authtutorial-de80c',
-    storageBucket: 'authtutorial-de80c.appspot.com',
-    iosClientId: '637905690799-9shnm980f8q6vjk9rbq6eih4tfp1l7jg.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAbRF7mUc931jwb6NGYt4YPB0b5C3nLA6w',
+    appId: '1:1051621258915:ios:02d2363987e081396bb116',
+    messagingSenderId: '1051621258915',
+    projectId: 'authentication-876a9',
+    databaseURL: 'https://authentication-876a9-default-rtdb.firebaseio.com',
+    storageBucket: 'authentication-876a9.appspot.com',
+    iosClientId: '1051621258915-b8ujfnrif57ujauq7mbpb9kcvlff33db.apps.googleusercontent.com',
     iosBundleId: 'com.example.modernlogintute',
   );
 }
