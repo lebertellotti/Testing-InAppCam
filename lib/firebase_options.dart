@@ -84,3 +84,4 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.modernlogintute',
   );
 }
+

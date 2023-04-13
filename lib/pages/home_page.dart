@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:modernlogintute/new_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -25,10 +26,20 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Center(
-          child: Text(
-        "LOGGED IN AS: " + user.email!,
-        style: TextStyle(fontSize: 20),
-      )),
+        child: ElevatedButton(
+          child: Text('Go to New Page'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NewPage()),
+          //child: Text(
+        //"LOGGED IN AS: " + user.email!,
+        //style: TextStyle(fontSize: 20),
+      //)),
+            );
+          }
+        ),
+      ),
     );
   }
 }
