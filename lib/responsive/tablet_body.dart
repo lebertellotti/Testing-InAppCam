@@ -16,7 +16,7 @@ class _TabletScaffoldState extends State<TabletScaffold> {
     return Scaffold(
       backgroundColor: defaultBackgroundColor,
       appBar: myAppBar,
-      drawer: myDrawer,
+      drawer: myDrawer(context),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -31,7 +31,7 @@ class _TabletScaffoldState extends State<TabletScaffold> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4),
                   itemBuilder: (context, index) {
-                    return MyBox();
+                    return const MyBox();
                   },
                 ),
               ),

@@ -27,7 +27,10 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Go to New Page'),
+        style: ButtonStyle(
+    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
+  ),
+          child: Text('View Dashboard'),
           onPressed: () {
             Navigator.push(
               context,

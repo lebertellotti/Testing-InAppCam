@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-//change path?
 import 'package:firebase_core/firebase_core.dart';
-import 'package:modernlogintute/responsive/desktop_body.dart';
-import 'package:modernlogintute/responsive/mobile_body.dart';
-import 'package:modernlogintute/responsive/tablet_body.dart';
 import 'firebase_options.dart';
 import 'pages/auth_page.dart';
-import 'responsive/responsive_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +27,7 @@ void main() async {
         //tabletBody: const TabletScaffold(),
         //desktopBody: const DesktopScaffold(),
       //),
-      home: AuthPage(),
+      home: const AuthPage(), //change back to AuthPage
     );
   }
 }
