@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modernlogintute/new_page.dart';
 
+import '../responsive/constants.dart';
+import 'login_or_register_page.dart';
+
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
@@ -34,6 +37,7 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
+              //MaterialPageRoute(builder: (context) => LoginOrRegisterPage()),
               MaterialPageRoute(builder: (context) => NewPage()),
           //child: Text(
         //"LOGGED IN AS: " + user.email!,
