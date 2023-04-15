@@ -27,18 +27,17 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Go to New Page'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NewPage()),
-          //child: Text(
-        //"LOGGED IN AS: " + user.email!,
-        //style: TextStyle(fontSize: 20),
-      //)),
-            );
-          }
-        ),
+            child: Text('Go to New Page'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NewPage()),
+                //child: Text(
+                //"LOGGED IN AS: " + user.email!,
+                //style: TextStyle(fontSize: 20),
+                //)),
+              );
+            }),
       ),
     );
   }
