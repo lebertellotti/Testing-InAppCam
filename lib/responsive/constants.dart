@@ -6,6 +6,7 @@ import '../pages/auth_page.dart';
 import '../pages/login_or_register_page.dart';
 import '../pages/login_page.dart';
 import '../pages/home_page.dart';
+import '../pages/location_page.dart';
 
 var defaultBackgroundColor = Colors.grey[300];
 var appBarColor = Colors.grey[900];
@@ -61,44 +62,43 @@ class AboutPage extends StatelessWidget {
 class LogoutPage extends StatelessWidget {
   @override
   //Widget build(BuildContext context) {
-    //return Scaffold(
-      //appBar: myAppBar,
-      //drawer: myDrawer(context),
-      //body: Center(
-        //child: Text('Logout Page'),
-      //),
-    //);
+  //return Scaffold(
+  //appBar: myAppBar,
+  //drawer: myDrawer(context),
+  //body: Center(
+  //child: Text('Logout Page'),
+  //),
+  //);
   //}
 //}
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        backgroundColor: Colors.grey[900],
-        actions: [
-          IconButton(
-            //onPressed: signUserOut,
-            onPressed: () {
-            signUserOut();
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AuthPage()),
-            );
-          }, icon: const Icon(Icons.logout),
-            
-          )
-        ],
-      ),
-      body: Center(
-        child: Text('Logout Page'),
-        )
-      );
-          }
-          
-            signUserOut() {
-              FirebaseAuth.instance.signOut();
-            }
+        backgroundColor: Colors.grey[300],
+        appBar: AppBar(
+          backgroundColor: Colors.grey[900],
+          actions: [
+            IconButton(
+              //onPressed: signUserOut,
+              onPressed: () {
+                signUserOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AuthPage()),
+                );
+              },
+              icon: const Icon(Icons.logout),
+            )
+          ],
+        ),
+        body: Center(
+          child: Text('Logout Page'),
+        ));
   }
+
+  signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
+}
 
 Widget myDrawer(BuildContext context) {
   return Drawer(
@@ -124,6 +124,22 @@ Widget myDrawer(BuildContext context) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NewPage()),
+              );
+            },
+          ),
+        ),
+        Padding(
+          padding: tilePadding,
+          child: ListTile(
+            leading: Icon(Icons.settings),
+            title: Text(
+              'L O C A T I O N ',
+              style: drawerTextColor,
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LocationPage()),
               );
             },
           ),
