@@ -5,10 +5,6 @@ import '../pages/auth_page.dart';
 import '../pages/login_or_register_page.dart';
 import '../pages/login_page.dart';
 import '../pages/home_page.dart';
-import 'desktop_body.dart';
-import 'mobile_body.dart';
-import 'responsive_layout.dart';
-import 'tablet_body.dart';
 
 var defaultBackgroundColor = Colors.grey[300];
 var appBarColor = Colors.grey[900];
@@ -199,13 +195,13 @@ class LogoutPage extends StatelessWidget {
 
   @override
   //Widget build(BuildContext context) {
-    //return Scaffold(
-      //appBar: myAppBar,
-      //drawer: myDrawer(context),
-      //body: Center(
-        //child: Text('Logout Page'),
-      //),
-    //);
+  //return Scaffold(
+  //appBar: myAppBar,
+  //drawer: myDrawer(context),
+  //body: Center(
+  //child: Text('Logout Page'),
+  //),
+  //);
   //}
 //}
 
@@ -214,7 +210,6 @@ class LogoutPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: Text('Log Out'),
         backgroundColor: Colors.grey[900],
         actions: [
           IconButton(
@@ -223,8 +218,7 @@ class LogoutPage extends StatelessWidget {
             signUserOut();
             Navigator.push(
               context,
-              //MaterialPageRoute(builder: (context) => AuthPage()),
-              MaterialPageRoute(builder: (context) => LoginOrRegisterPage()),
+              MaterialPageRoute(builder: (context) => AuthPage()),
             );
           }, icon: const Icon(Icons.logout),
             
@@ -232,14 +226,14 @@ class LogoutPage extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Text('You have been successfully logged out.'),
+        child: Text('Logout Page'),
         )
       );
           }
           
-            //signUserOut() {
-              //FirebaseAuth.instance.signOut();
-            //}
+            signUserOut() {
+              FirebaseAuth.instance.signOut();
+            }
   }
 
 Widget myDrawer(BuildContext context) {
@@ -266,6 +260,22 @@ Widget myDrawer(BuildContext context) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NewPage()),
+              );
+            },
+          ),
+        ),
+        Padding(
+          padding: tilePadding,
+          child: ListTile(
+            leading: Icon(Icons.settings),
+            title: Text(
+              'L O C A T I O N ',
+              style: drawerTextColor,
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LocationPage()),
               );
             },
           ),

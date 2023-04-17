@@ -37,7 +37,6 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              //MaterialPageRoute(builder: (context) => LoginOrRegisterPage()),
               MaterialPageRoute(builder: (context) => NewPage()),
           //child: Text(
         //"LOGGED IN AS: " + user.email!,

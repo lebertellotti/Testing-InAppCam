@@ -1,7 +1,12 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
+//change path?
 import 'package:firebase_core/firebase_core.dart';
+import 'package:modernlogintute/responsive/desktop_body.dart';
+import 'package:modernlogintute/responsive/mobile_body.dart';
+import 'package:modernlogintute/responsive/tablet_body.dart';
 import 'firebase_options.dart';
 import 'pages/auth_page.dart';
+import 'responsive/responsive_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,9 +17,9 @@ void main() async {
 }
 
 //class MyApp extends StatelessWidget {
-  //const MyApp({super.key});
+//const MyApp({super.key});
 
-  class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -23,11 +28,20 @@ void main() async {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.green),
       //home: ResponsiveLayout(
-        //mobileBody: const MobileScaffold(),
-        //tabletBody: const TabletScaffold(),
-        //desktopBody: const DesktopScaffold(),
+      //mobileBody: const MobileScaffold(),
+      //tabletBody: const TabletScaffold(),
+      //desktopBody: const DesktopScaffold(),
       //),
-      home: const AuthPage(), //change back to AuthPage
+      home: AuthPage(),
     );
   }
+}
+*/
+
+import 'package:flutter/material.dart';
+//import '../udp-socket.dart';
+import '../pages/location_page.dart';
+
+void main() {
+  runApp(MyApp());
 }
