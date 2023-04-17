@@ -105,6 +105,53 @@ class _LocationPageState extends State<LocationPage> {
     final tempKelvin = data['main']['temp'];
     final tempFahrenheit = kelvinToFahrenheit(tempKelvin);
 
+    // added code, needs to be tested
+      if (tempFahrenheit <= 75) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('Temperature Alert'),
+            content: Text('The outside temperature is below or equal to 75°F.'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('OK'),
+              ),
+            ],
+          ),
+        );
+      } else if (tempFahrenheit < 0) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('Temperature Alert'),
+            content: Text('The outside temperature is below 0°F'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('OK'),
+              ),
+            ],
+          ),
+        );
+      }
+      else {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('Temperature Alert'),
+            content: Text('The outside temperature is safe.'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('OK'),
+              ),
+            ],
+          ),
+        );
+      }
+
+
     return tempFahrenheit;
   }
 

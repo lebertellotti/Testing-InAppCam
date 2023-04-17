@@ -22,6 +22,8 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
   String _data = '';
   List<String> _filteredData = [];
   Timer? _timer;
+  
+  // BuildContext? _context; // addition!
 
   Future<void> startSocket() async {
     final socket = await RawDatagramSocket.bind(InternetAddress.anyIPv4, 5005);
@@ -76,19 +78,14 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
   }
 
   /////////////////////////////////////////////
-/*
-    if (filtered.isNotEmpty) {
-      showAlertDialog(filtered.last);
-    }
-  }
-
-  void showAlertDialog(String message) {
+    /* the following chunk of code goes within void _filterDataAndUpdateState code 
+        if (filtered.isNotEmpty) {
     showDialog(
-      context: context,
+      context: _context!,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('New Notification'),
-          content: Text(message),
+          content: Text(filtered.last),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -99,9 +96,11 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
       },
     );
   }
+}
 */
   @override
   void initState() {
+    // _context = context; // addition
     super.initState();
     startSocket();
   }

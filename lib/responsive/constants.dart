@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../new_page.dart';
 import '../pages/auth_page.dart';
+import '../pages/location_page.dart';
 import '../pages/login_or_register_page.dart';
 import '../pages/login_page.dart';
 import '../pages/home_page.dart';
@@ -231,9 +232,9 @@ class LogoutPage extends StatelessWidget {
       );
           }
           
-            signUserOut() {
-              FirebaseAuth.instance.signOut();
-            }
+            //signUserOut() {
+              //FirebaseAuth.instance.signOut();
+            //}
   }
 
 Widget myDrawer(BuildContext context) {
