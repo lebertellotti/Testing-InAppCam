@@ -22,6 +22,9 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
   String _data = '';
   List<String> _filteredData = [];
   Timer? _timer;
+  /////// adding a line so that detection-and-temp-notif.dart works need to be tested
+  bool isPersonDetected = false;
+  /////// this is the line added
 
   Future<void> startSocket() async {
     final socket = await RawDatagramSocket.bind(InternetAddress.anyIPv4, 5005);
@@ -37,6 +40,13 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
           _timer = Timer.periodic(Duration(seconds: 15), (timer) {
             setState(() {
               _filteredData = _filterData(_data);
+              /////// adding this portion for detection-and-temp-notif.dart
+              if (_data == 'person detected') {
+                isPersonDetected = true;
+              } else {
+                isPersonDetected = false;
+              }
+              //// this is the portion where it stops
             });
           });
         }
@@ -75,31 +85,6 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
     });
   }
 
-  /////////////////////////////////////////////
-/*
-    if (filtered.isNotEmpty) {
-      showAlertDialog(filtered.last);
-    }
-  }
-
-  void showAlertDialog(String message) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('New Notification'),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-*/
   @override
   void initState() {
     super.initState();
@@ -131,3 +116,29 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
     );
   }
 }
+
+/////////////////////////////////////////////
+/*
+    if (filtered.isNotEmpty) {
+      showAlertDialog(filtered.last);
+    }
+  }
+
+  void showAlertDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('New Notification'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+*/
