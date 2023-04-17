@@ -22,6 +22,7 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
   String _data = '';
   List<String> _filteredData = [];
   Timer? _timer;
+
   /////// adding a line so that detection-and-temp-notif.dart works need to be tested
   bool isPersonDetected = false;
   /////// this is the line added
@@ -116,29 +117,3 @@ class _UdpSocketHomePageState extends State<UdpSocketHomePage> {
     );
   }
 }
-
-/////////////////////////////////////////////
-/*
-    if (filtered.isNotEmpty) {
-      showAlertDialog(filtered.last);
-    }
-  }
-
-  void showAlertDialog(String message) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('New Notification'),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-*/

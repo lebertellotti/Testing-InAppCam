@@ -44,8 +44,8 @@ dependencies:
   overlay_support: ^2.1.0
   geolocator: ^9.0.2
   geocoding: ^2.1.0
-  #flutter_location: ^0.0.4
-  location: ^4.2.0
+  flutter_location: ^0.0.4
+  #location: ^4.2.0
   convert: ^3.0.1
   
 
