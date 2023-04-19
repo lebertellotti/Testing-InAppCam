@@ -6,6 +6,8 @@ import '../pages/location_page.dart';
 import '../pages/login_or_register_page.dart';
 import '../pages/login_page.dart';
 import '../pages/home_page.dart';
+import '../udp-socket.dart';
+import '../notif.dart';
 
 var defaultBackgroundColor = Colors.grey[300];
 var appBarColor = Colors.grey[900];
@@ -32,26 +34,25 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-
 //class SettingsPage extends StatelessWidget {
-  //@override
-  //Widget build(BuildContext context) {
-    //return Scaffold(
-      //appBar: myAppBar,
-      //drawer: myDrawer(context),
-      //body: Center(
-        //child: Text('Settings Page'),
-      //),
-    //);
-  //}
+//@override
+//Widget build(BuildContext context) {
+//return Scaffold(
+//appBar: myAppBar,
+//drawer: myDrawer(context),
+//body: Center(
+//child: Text('Settings Page'),
+//),
+//);
+//}
 //}
 
-class SettingsPage extends StatefulWidget {
+/*class SettingsPage extends StatefulWidget {
   @override
   _SettingsPageState createState() => _SettingsPageState();
-}
+}*/
 
-class _SettingsPageState extends State<SettingsPage> {
+/*class _SettingsPageState extends State<SettingsPage> {
   bool _notificationsEnabled = true;
   double _fontSize = 16;
   String _selectedLanguage = 'English';
@@ -71,9 +72,9 @@ class _SettingsPageState extends State<SettingsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Text(
-              //'Settings',
-              //textAlign: TextAlign.center,
-              //style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            //'Settings',
+            //textAlign: TextAlign.center,
+            //style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             //),
             SizedBox(height: 16),
             Row(
@@ -109,10 +110,10 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
     );
   }
-}
+}*/
 
 class AboutPage extends StatelessWidget {
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('About'),
@@ -127,7 +128,10 @@ class AboutPage extends StatelessWidget {
               child: Text(
                 'In-Car Safety Monitoring System',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.grey[700]),
+                style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey[700]),
               ),
             ),
             SizedBox(height: 32),
@@ -145,54 +149,52 @@ class AboutPage extends StatelessWidget {
     );
   }
 }
-  //@override
-  //Widget build(BuildContext context) {
-    //return Scaffold(
-      //appBar: myAppBar,
-      //drawer: myDrawer(context),
-      //body: Center(
-        //child: Text('About Page'),
-      //),
-    //);
-  //}
+//@override
+//Widget build(BuildContext context) {
+//return Scaffold(
+//appBar: myAppBar,
+//drawer: myDrawer(context),
+//body: Center(
+//child: Text('About Page'),
+//),
+//);
+//}
 
-  //Widget build(BuildContext context) {
-    //return Scaffold(
-      //appBar: myAppBar,
-      //drawer: myDrawer(context),
-      //body: Padding(
-        //padding: const EdgeInsets.all(16.0),
-        //child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.center,
-          //children: [
-            //Text(
-              //'In-Car Safety Monitoring System',
-              //textAlign: TextAlign.center,
-              //style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            //),
-            //SizedBox(height: 16),
-            //Text(
-              //'The system can sense if a person or pet is alone in a vehicle and check if they are in distress due to extreme weather conditions. It will then send out alerts to notify the driver.',
-              //textAlign: TextAlign.center,
-              //style: TextStyle(fontSize: 16),
-            //),
-          //],
-        //),
-      //),
-    //);
-  //}
+//Widget build(BuildContext context) {
+//return Scaffold(
+//appBar: myAppBar,
+//drawer: myDrawer(context),
+//body: Padding(
+//padding: const EdgeInsets.all(16.0),
+//child: Column(
+//crossAxisAlignment: CrossAxisAlignment.center,
+//children: [
+//Text(
+//'In-Car Safety Monitoring System',
+//textAlign: TextAlign.center,
+//style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+//),
+//SizedBox(height: 16),
+//Text(
+//'The system can sense if a person or pet is alone in a vehicle and check if they are in distress due to extreme weather conditions. It will then send out alerts to notify the driver.',
+//textAlign: TextAlign.center,
+//style: TextStyle(fontSize: 16),
+//),
+//],
+//),
+//),
+//);
+//}
 
 class LogoutPage extends StatelessWidget {
-
-
   LogoutPage({super.key});
 
   final user = FirebaseAuth.instance.currentUser!;
 
-  // sign user out method
-  void signUserOut() {
+  /*// sign user out method
+   signUserOut() {
     FirebaseAuth.instance.signOut();
-  }
+  }*/
 
   @override
   //Widget build(BuildContext context) {
@@ -206,36 +208,34 @@ class LogoutPage extends StatelessWidget {
   //}
 //}
 
-
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
-      appBar: AppBar(
-        backgroundColor: Colors.grey[900],
-        actions: [
-          IconButton(
-            //onPressed: signUserOut,
-            onPressed: () {
-            signUserOut();
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AuthPage()),
-            );
-          }, icon: const Icon(Icons.logout),
-            
-          )
-        ],
-      ),
-      body: Center(
-        child: Text('Logout Page'),
-        )
-      );
-          }
-          
-            //signUserOut() {
-              //FirebaseAuth.instance.signOut();
-            //}
+        backgroundColor: Colors.grey[300],
+        appBar: AppBar(
+          backgroundColor: Colors.grey[900],
+          actions: [
+            IconButton(
+              //onPressed: signUserOut,
+              onPressed: () {
+                signUserOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AuthPage()),
+                );
+              },
+              icon: const Icon(Icons.logout),
+            )
+          ],
+        ),
+        body: Center(
+          child: Text('Logout Page'),
+        ));
   }
+
+  signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
+}
 
 Widget myDrawer(BuildContext context) {
   return Drawer(
@@ -260,7 +260,7 @@ Widget myDrawer(BuildContext context) {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => NewPage()),
+                MaterialPageRoute(builder: (context) => NotifPage()),
               );
             },
           ),
@@ -286,13 +286,13 @@ Widget myDrawer(BuildContext context) {
           child: ListTile(
             leading: Icon(Icons.settings),
             title: Text(
-              'S E T T I N G S',
+              'P A S T  N O T I F I C A T I O N S',
               style: drawerTextColor,
             ),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SettingsPage()),
+                MaterialPageRoute(builder: (context) => UdpSocketHomePage()),
               );
             },
           ),
@@ -325,7 +325,6 @@ Widget myDrawer(BuildContext context) {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LogoutPage()),
-            
               );
             },
           ),
@@ -404,3 +403,6 @@ var myDrawer = Drawer(
   ),
 );
 */
+
+/////PLEASE POST HERE: 
+///

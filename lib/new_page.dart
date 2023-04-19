@@ -5,7 +5,6 @@ import 'responsive/mobile_body.dart';
 import 'responsive/responsive_layout.dart';
 import 'responsive/tablet_body.dart';
 
-
 class NewPage extends StatelessWidget {
   const NewPage({super.key});
 
@@ -17,9 +16,9 @@ class NewPage extends StatelessWidget {
         backgroundColor: Colors.grey[900],
       ),
       body: ResponsiveLayout(
-       mobileBody: MobileScaffold(),
-       tabletBody: TabletScaffold(),
-       desktopBody: DesktopScaffold(),
+        mobileBody: MobileScaffold(),
+        tabletBody: TabletScaffold(),
+        desktopBody: DesktopScaffold(),
       ),
     );
   }

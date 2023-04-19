@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 //change path?
 import 'package:firebase_core/firebase_core.dart';
 import 'package:modernlogintute/responsive/desktop_body.dart';
@@ -32,14 +32,33 @@ class MyApp extends StatelessWidget {
       //tabletBody: const TabletScaffold(),
       //desktopBody: const DesktopScaffold(),
       //),
-      home: AuthPage(),
+      home: const AuthPage(),
     );
   }
 }
+
+/*
+//test1
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.green),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const AuthPage(),
+        '/login': (context) => const LoginPage(),
+      },
+    );
+  }
 */
 //THIS IS THE CORRECT CODE TO CALL THE IN-APP BANNER
+/*
 import 'package:flutter/material.dart';
-import '../in-app-banner.dart';
+import '../udp-notif.dart';
 
 void main() {
   runApp(MyApp());
@@ -79,4 +98,85 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+*/
 // THIS IS WHERE THE CODE THAT CONTROLS THE IN-APP BANNER ENDS
+
+//this is me trying to get the UDP socket to pop up as an in-app alert rather than a print statement on the screen
+/*
+import '../udp-socket.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      home: UdpSocketHomePage(),
+    );
+  }
+}*/
+
+//// this is testing out the location notif
+/*
+import '../pages/detection-and-temp-notif.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      home: Combined(),
+    );
+  }
+}
+*/
+/*
+import '../detection-and-notif-v2.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      home: UdpSocketHomePage(),
+    );
+  }
+}
+*/
+
+//// UDP NOTIF IN A BANNER FORMAT MAIN FUNCTION STARTS HERE
+/*
+import '../notif.dart'; //location_page.dart';
+import 'package:flutter/material.dart';
+//import 'package:fluttertoast/fluttertoast.dart';
+import '../pages/location_page.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      home: NotifPage(),
+    );
+  }
+}
+*/
+//// UDP NOTIF IN A BANNER FORMAT MAIN FUNCTION ENDS HERE

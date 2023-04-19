@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modernlogintute/new_page.dart';
-
+import 'package:modernlogintute/notif.dart';
+import '../notif.dart';
 import '../responsive/constants.dart';
 import 'login_or_register_page.dart';
 
@@ -30,21 +31,20 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-        style: ButtonStyle(
-    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
-  ),
-          child: Text('View Dashboard'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NewPage()),
-          //child: Text(
-        //"LOGGED IN AS: " + user.email!,
-        //style: TextStyle(fontSize: 20),
-      //)),
-            );
-          }
-        ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
+            ),
+            child: Text('View Dashboard'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotifPage()),
+                //child: Text(
+                //"LOGGED IN AS: " + user.email!,
+                //style: TextStyle(fontSize: 20),
+                //)),
+              );
+            }),
       ),
     );
   }
